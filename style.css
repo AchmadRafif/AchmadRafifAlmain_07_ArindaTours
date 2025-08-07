@@ -29,7 +29,6 @@ body {
   align-items: center;
   padding: 1.4rem 7%;
   background-color: var(--bg);
-  border-bottom: 1px solid var(--bg);
   position: fixed;
   max-height: 90px;
   top: 0;
@@ -37,4 +36,110 @@ body {
   right: 0;
   z-index: 9999;
   background: linear-gradient(to top, #e8e8e850, #e8e8e8 80%);
+}
+
+.navbar img {
+  width: 85px;
+}
+
+.navbar .navbar-bar a {
+  color: var(--text);
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-bar a:hover {
+  color: var(--prim);
+}
+
+.navbar .navbar-bar a::after {
+  content: "";
+  display: block;
+  border-bottom: 0.1rem solid var(--prim);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-bar a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-menu a {
+  color: var(--text);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-menu a:hover {
+  color: var(--prim);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* Tablet */
+@media (max-width: 868px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-bar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    border-radius: 20px;
+    width: 20rem;
+    height: 32vh;
+    transition: 0.3s;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.277);
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar .navbar-bar.active {
+    right: 0;
+  }
+
+  .navbar .navbar-bar a {
+    color: var(--text);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-bar a::after {
+    transform-origin: 0, 0;
+    margin-right: 10px;
+  }
+
+  .navbar .navbar-bar a:hover::after {
+    transform: scaleX(0.7);
+  }
+}
+/* Hp */
+@media (max-width: 665px) {
+  html {
+    font-size: 55%;
+  }
+
+  .navbar .navbar-bar {
+    height: 28vh;
+  }
 }
