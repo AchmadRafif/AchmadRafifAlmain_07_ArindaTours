@@ -1,9 +1,40 @@
 :root {
-    --bg: #e8e8e8;
-    --text: #1c2b2d;
-    --prim: #495464;
+  --bg: #e8e8e8;
+  --bg2: #fff;
+  --text: #1c2b2d;
+  --prim: #495464;
 }
 
 * {
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  background-attachment: fixed;
+  background-image: url(img/body-bg.jpg);
+  max-height: 5000px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--bg);
+  position: fixed;
+  max-height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(to top, #e8e8e850, #e8e8e8 80%);
 }
